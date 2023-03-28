@@ -102,11 +102,12 @@ public class TwinTrees {
         int[] copy = Arrays.copyOf(p,n);
         Arrays.sort(copy);
         for(int i = 0; i < n; i++) {
-            assert copy[i] == (i+1);
+            assert copy[i] == (i+1) : "The input is not a valid permutation of " + n;
         }
     }
 
     public static void main(String[] args) {
+        if(args.length == 0) return;
         System.out.println("Running on: " + String.join(", ", args));
         int[] p = new int[args.length];
         for(int i = 0; i < args.length; i++) {
